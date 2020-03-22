@@ -25,4 +25,6 @@ def postCoordinates():
     data=request.get_json()
     return jsonify({'Koordinate':Lokacija.vratiKoordinate(data['drzava'])})
 
-    
+@app.route('/getDomaceStats',methods=['GET'])
+def getStatsSerbia():
+    return jsonify({'Statistika':scrapyFile.oblastiSrbijeStats()})
